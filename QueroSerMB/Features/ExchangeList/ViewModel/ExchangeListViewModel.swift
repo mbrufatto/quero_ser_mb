@@ -13,6 +13,7 @@ class ExchangeListViewModel: ObservableObject {
     @Published var exchanges: [Exchange] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
+    @Published var searchText = ""
     
     private var currentPage = 1
     private let limit = 20
@@ -20,9 +21,17 @@ class ExchangeListViewModel: ObservableObject {
     
     private let service: ExchangeServiceProtocol
     
-    init(service: ExchangeServiceProtocol = ExchangeService()) {
-            self.service = service
+    var filteredExchanges: [Exchange] {
+        if searchText.isEmpty {
+            return exchanges
+        } else {
+            return exchanges.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
+    }
+    
+    init(service: ExchangeServiceProtocol = ExchangeService()) {
+        self.service = service
+    }
     
     func loadExchanges() async {
         

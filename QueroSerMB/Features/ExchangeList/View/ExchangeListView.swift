@@ -13,7 +13,7 @@ struct ExchangeListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.exchanges) { exchange in
+                ForEach(viewModel.filteredExchanges) { exchange in
                     ExchangeRowView(exchange: exchange)
                         .onAppear {
                             if exchange.id == viewModel.exchanges.last?.id {
@@ -33,8 +33,11 @@ struct ExchangeListView: View {
                 }
             }
             .navigationTitle("Exchanges")
+            .searchable(text: $viewModel.searchText, prompt: "Busca exchange")
             .task {
-                 await viewModel.loadExchanges()
+                if viewModel.exchanges.isEmpty {
+                    await viewModel.loadExchanges()
+                }
             }
         }
     }
