@@ -1,0 +1,15 @@
+# Xcode
+# ------
+build/
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+
+# Configurações Sensíveis (O mais importante para você agora)
+# ------
+QueroSerMB/Secrets.xcconfig
+
+# Outros
+# ------
+.DS_Store

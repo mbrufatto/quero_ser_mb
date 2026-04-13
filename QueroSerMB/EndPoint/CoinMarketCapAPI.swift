@@ -12,7 +12,7 @@ enum CoinMarketCapAPI: APIEndpoint {
     case info(ids: String)
     case quotes(exchangeId: String)
     
-    var baseURL: String { "https://pro-api.coinmarketcap.com"}
+    var baseURL: String { Configuration.baseUrl }
     
     var path: String {
         switch self {
@@ -38,6 +38,6 @@ enum CoinMarketCapAPI: APIEndpoint {
     
     var method: HTTPMethod { .get }
     var headers: [String: String]? {
-        ["X-CMC_PRO_API_KEY": "b3e487c343ea4bf4bc05ce4d43b80ec2"]
+        ["X-CMC_PRO_API_KEY": Configuration.apiKey]
     }
 }

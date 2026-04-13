@@ -9,6 +9,7 @@ import Foundation
 
 protocol ExchangeServiceProtocol {
     func getExchanges(start: Int, limit: Int) async throws -> [Exchange]
+    func getExchangeAssets(id: String) async throws -> [CurrencyData]
 }
 
 final class ExchangeService: ExchangeServiceProtocol {
@@ -26,5 +27,10 @@ final class ExchangeService: ExchangeServiceProtocol {
         
         let list = infoResponse.data.values.compactMap { $0 }
         return list.sorted { ($0.spotVolumeUsd ?? 0) > ($1.spotVolumeUsd ?? 0) }
+    }
+    
+    func getExchangeAssets(id: String) async throws -> [CurrencyData] {
+        let currenciesResponse: CurrencyBase = try await network.request(endpoint: ExchangeAssetsAPI.assets(id: id))
+        return currenciesResponse.data
     }
 }
