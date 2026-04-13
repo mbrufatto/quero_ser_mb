@@ -11,7 +11,7 @@ import SwiftUI
 struct QueroSerMBApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ExchangeListView()
         }
     }
 }
