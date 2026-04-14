@@ -28,6 +28,8 @@ struct ExchangeDetailView: View {
                         Text(viewModel.exchange.name)
                             .font(.title)
                             .bold()
+                            .accessibilityIdentifier("detail_exchange_name")
+                        
                         Text("ID: \(viewModel.exchange.id)")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
@@ -37,15 +39,20 @@ struct ExchangeDetailView: View {
                 if let description = viewModel.exchange.description {
                     Text("Sobre")
                         .font(.headline)
+                        .accessibilityIdentifier("detail_about")
                     Text(description)
                         .font(.body)
                 }
                 
                 VStack(alignment: .leading, spacing: 10) {
                     infoRow(label: "Website", value: viewModel.exchange.urls?.website?.first ?? "N/A", isLink: true)
+                        .accessibilityIdentifier("detail_website")
                     infoRow(label: "Lançamento", value: viewModel.exchange.dateLaunched ?? "N/A")
+                        .accessibilityIdentifier("detail_launch_date")
                     infoRow(label: "Maker Fee", value: String(format: "%.2f%%", viewModel.exchange.makerFee ?? 0.0))
+                        .accessibilityIdentifier("detail_maker_fee")
                     infoRow(label: "Taker Fee", value: String(format: "%.2f%%", viewModel.exchange.takerFee ?? 0.0))
+                        .accessibilityIdentifier("detail_taker_fee")
                 }
                 .padding()
                 .background(Color.secondary.opacity(0.1))
@@ -72,6 +79,7 @@ struct ExchangeDetailView: View {
                     LazyVStack {
                         ForEach(viewModel.currencies) { currency in
                             CurrencyRow(currency: currency.currency)
+                                .accessibilityIdentifier("currency_row_\(currency.currency.name)")
                             Divider()
                         }
                     }

@@ -24,6 +24,7 @@ struct ExchangeRowView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(exchange.name)
                     .font(.headline)
+                    .accessibilityIdentifier("exchange_name_label")
                 
                 if let date = exchange.dateLaunched {
                     Text("Desde \(date.prefix(4))")
@@ -42,5 +43,8 @@ struct ExchangeRowView: View {
             }
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("exchange_cell_\(exchange.id)")
+        .accessibilityLabel(exchange.name)
     }
 }

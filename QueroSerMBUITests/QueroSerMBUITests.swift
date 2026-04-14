@@ -8,36 +8,62 @@
 import XCTest
 
 final class QueroSerMBUITests: XCTestCase {
-
+    
+    let app = XCUIApplication()
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        
+        app.launchArguments.append("-UIViewAnimationDurationScaleKey")
+        app.launchArguments.append("0")
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // XCUIAutomation Documentation
-        // https://developer.apple.com/documentation/xcuiautomation
     }
-
-    @MainActor
-    func testLaunchPerformance() throws {
-        // This measures how long it takes to launch your application.
-        measure(metrics: [XCTApplicationLaunchMetric()]) {
-            XCUIApplication().launch()
+    
+    func test_navigation_to_detail() {
+        let firstCell = app.cells.containing(NSPredicate(format: "identifier BEGINSWITH 'exchange_cell_'")).firstMatch
+        XCTAssertTrue(firstCell.waitForExistence(timeout: 5.0), "A lista não carregou.")
+        
+        var exchangeName = firstCell.label
+        if exchangeName.isEmpty {
+            exchangeName = firstCell.staticTexts["exchange_name_label"].label
         }
+        
+        exchangeName = exchangeName.components(separatedBy: ",").first ?? exchangeName
+        
+        print("--- DEBUG: Tentando navegar para: [\(exchangeName)] ---")
+        
+        firstCell.tap()
+        
+        let detailNameLabel = app.staticTexts["detail_exchange_name"]
+        XCTAssertTrue(detailNameLabel.waitForExistence(timeout: 5.0), "Falha ao carregar a tela de detalhes.")
+        
+        if !exchangeName.isEmpty {
+            XCTAssertEqual(detailNameLabel.label, exchangeName, "O nome na tela de detalhes não condiz com o selecionado.")
+        }
+        
+        XCTAssertTrue(app.staticTexts["detail_website"].exists, "Campo de Website não encontrado.")
+        XCTAssertTrue(app.staticTexts["detail_launch_date"].exists, "Campo de Lançamento não encontrado.")
+        XCTAssertTrue(app.staticTexts["detail_about"].exists)
+    }
+    
+    func test_search_funtionality() {
+        let serachField = app.searchFields["Busca exchange"]
+        XCTAssertTrue(serachField.exists)
+        
+        serachField.tap()
+        serachField.typeText("HTX")
+        
+        let firstCell = app.cells.firstMatch
+        XCTAssertTrue(firstCell.staticTexts["HTX"].exists)
+    }
+    
+    func test_pagination_scroll() {
+        let list = app.collectionViews.firstMatch
+        
+        list.swipeUp(velocity: .fast)
+        list.swipeUp(velocity: .fast)
+        
+        XCTAssertTrue(app.cells.count > 0)
     }
 }
+
