@@ -6,8 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		614F35332F8DC5C0004D6FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 614F34952F899F2A004D6FFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 614F349C2F899F2A004D6FFB;
+			remoteInfo = QueroSerMB;
+		};
+		614F35422F8DC5F2004D6FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 614F34952F899F2A004D6FFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 614F349C2F899F2A004D6FFB;
+			remoteInfo = QueroSerMB;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		614F349D2F899F2A004D6FFB /* QueroSerMB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueroSerMB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		614F352F2F8DC5C0004D6FFB /* QueroSerMBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueroSerMBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		614F353C2F8DC5F2004D6FFB /* QueroSerMBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueroSerMBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +48,34 @@
 			path = QueroSerMB;
 			sourceTree = "<group>";
 		};
+		614F35302F8DC5C0004D6FFB /* QueroSerMBTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = QueroSerMBTests;
+			sourceTree = "<group>";
+		};
+		614F353D2F8DC5F2004D6FFB /* QueroSerMBUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = QueroSerMBUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		614F349A2F899F2A004D6FFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		614F352C2F8DC5C0004D6FFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		614F35392F8DC5F2004D6FFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				614F349F2F899F2A004D6FFB /* QueroSerMB */,
+				614F35302F8DC5C0004D6FFB /* QueroSerMBTests */,
+				614F353D2F8DC5F2004D6FFB /* QueroSerMBUITests */,
 				614F349E2F899F2A004D6FFB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				614F349D2F899F2A004D6FFB /* QueroSerMB.app */,
+				614F352F2F8DC5C0004D6FFB /* QueroSerMBTests.xctest */,
+				614F353C2F8DC5F2004D6FFB /* QueroSerMBUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +130,52 @@
 			productReference = 614F349D2F899F2A004D6FFB /* QueroSerMB.app */;
 			productType = "com.apple.product-type.application";
 		};
+		614F352E2F8DC5C0004D6FFB /* QueroSerMBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 614F35352F8DC5C0004D6FFB /* Build configuration list for PBXNativeTarget "QueroSerMBTests" */;
+			buildPhases = (
+				614F352B2F8DC5C0004D6FFB /* Sources */,
+				614F352C2F8DC5C0004D6FFB /* Frameworks */,
+				614F352D2F8DC5C0004D6FFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				614F35342F8DC5C0004D6FFB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				614F35302F8DC5C0004D6FFB /* QueroSerMBTests */,
+			);
+			name = QueroSerMBTests;
+			packageProductDependencies = (
+			);
+			productName = QueroSerMBTests;
+			productReference = 614F352F2F8DC5C0004D6FFB /* QueroSerMBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		614F353B2F8DC5F2004D6FFB /* QueroSerMBUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 614F35442F8DC5F2004D6FFB /* Build configuration list for PBXNativeTarget "QueroSerMBUITests" */;
+			buildPhases = (
+				614F35382F8DC5F2004D6FFB /* Sources */,
+				614F35392F8DC5F2004D6FFB /* Frameworks */,
+				614F353A2F8DC5F2004D6FFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				614F35432F8DC5F2004D6FFB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				614F353D2F8DC5F2004D6FFB /* QueroSerMBUITests */,
+			);
+			name = QueroSerMBUITests;
+			packageProductDependencies = (
+			);
+			productName = QueroSerMBUITests;
+			productReference = 614F353C2F8DC5F2004D6FFB /* QueroSerMBUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +188,14 @@
 				TargetAttributes = {
 					614F349C2F899F2A004D6FFB = {
 						CreatedOnToolsVersion = 26.4;
+					};
+					614F352E2F8DC5C0004D6FFB = {
+						CreatedOnToolsVersion = 26.4;
+						TestTargetID = 614F349C2F899F2A004D6FFB;
+					};
+					614F353B2F8DC5F2004D6FFB = {
+						CreatedOnToolsVersion = 26.4;
+						TestTargetID = 614F349C2F899F2A004D6FFB;
 					};
 				};
 			};
@@ -113,12 +214,28 @@
 			projectRoot = "";
 			targets = (
 				614F349C2F899F2A004D6FFB /* QueroSerMB */,
+				614F352E2F8DC5C0004D6FFB /* QueroSerMBTests */,
+				614F353B2F8DC5F2004D6FFB /* QueroSerMBUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		614F349B2F899F2A004D6FFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		614F352D2F8DC5C0004D6FFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		614F353A2F8DC5F2004D6FFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +252,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		614F352B2F8DC5C0004D6FFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		614F35382F8DC5F2004D6FFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		614F35342F8DC5C0004D6FFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 614F349C2F899F2A004D6FFB /* QueroSerMB */;
+			targetProxy = 614F35332F8DC5C0004D6FFB /* PBXContainerItemProxy */;
+		};
+		614F35432F8DC5F2004D6FFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 614F349C2F899F2A004D6FFB /* QueroSerMB */;
+			targetProxy = 614F35422F8DC5F2004D6FFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		614F34A62F899F2C004D6FFB /* Debug */ = {
@@ -329,6 +473,88 @@
 			};
 			name = Release;
 		};
+		614F35362F8DC5C0004D6FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F6NR5MWZFA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mantratech.QueroSerMBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QueroSerMB.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QueroSerMB";
+			};
+			name = Debug;
+		};
+		614F35372F8DC5C0004D6FFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F6NR5MWZFA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mantratech.QueroSerMBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QueroSerMB.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QueroSerMB";
+			};
+			name = Release;
+		};
+		614F35452F8DC5F2004D6FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F6NR5MWZFA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mantratech.QueroSerMBUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QueroSerMB;
+			};
+			name = Debug;
+		};
+		614F35462F8DC5F2004D6FFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F6NR5MWZFA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mantratech.QueroSerMBUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QueroSerMB;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -346,6 +572,24 @@
 			buildConfigurations = (
 				614F34A92F899F2C004D6FFB /* Debug */,
 				614F34AA2F899F2C004D6FFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		614F35352F8DC5C0004D6FFB /* Build configuration list for PBXNativeTarget "QueroSerMBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				614F35362F8DC5C0004D6FFB /* Debug */,
+				614F35372F8DC5C0004D6FFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		614F35442F8DC5F2004D6FFB /* Build configuration list for PBXNativeTarget "QueroSerMBUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				614F35452F8DC5F2004D6FFB /* Debug */,
+				614F35462F8DC5F2004D6FFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
